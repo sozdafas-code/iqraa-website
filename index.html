@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>اقرأ — طلب العلم في الإسلام</title>
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#c9a23f">
+
+  <!-- خط عربي -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- مكتبة AOS للأنيميشن -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg-beige: #f8f5f0;
+      --olive: #4b5f35;
+      --gold: #c9a23f;
+      --text: #2b2b2b;
+      --muted: #6b6b6b;
+      --card: #ffffff;
+      --radius: 20px;
+      font-family: 'Cairo', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg-beige);
+      color: var(--text);
+      font-size: 20px;
+      line-height: 1.9;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { max-width: 1300px; margin: 60px auto; padding: 0 20px; }
+
+    h1,h2,h3,h4 { color: var(--gold); font-weight: 800; margin-top: 0; }
+    p { color: var(--olive); margin: 0 0 20px 0; }
+
+    .card { background: var(--card); border-radius: var(--radius); box-shadow: 0 12px 30px rgba(0,0,0,0.05); padding: 40px; margin-bottom: 60px; }
+
+    .hero { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 30px; }
+    .logo { width: 100px; height: 100px; border-radius: 20px; background: linear-gradient(135deg, var(--olive), var(--gold)); display: flex; align-items: center; justify-content: center; font-size: 26px; font-weight: 800; color: white; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    .hero h1 { font-size: 36px; }
+    .btn { padding: 12px 25px; border-radius: 12px; border: none; cursor: pointer; font-weight: 700; font-size: 16px; transition: all 0.3s ease; }
+    .btn-primary { background: var(--gold); color: #fff; }
+    .btn-outline { background: transparent; border: 2px solid var(--olive); color: var(--olive); }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-outline:hover { background: var(--olive); color: #fff; }
+
+    iframe { width: 100%; height: 300px; border: none; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+
+    .game { text-align: center; }
+    .tiles { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 20px 0; }
+    .tile { min-width: 60px; height: 60px; border-radius: 12px; background: linear-gradient(180deg,#fff,#f1f1f1); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 24px; cursor: grab; box-shadow: 0 6px 20px rgba(0,0,0,0.08); user-select: none; }
+    .target { min-height: 80px; border-radius: 16px; background: #faf7f2; border: 2px dashed #e0d5b8; padding: 15px; display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+    .scholars { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 20px; }
+    .scholar { background: #fff; padding: 20px; border-radius: 20px; box-shadow: 0 12px 28px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 15px; transition: transform 0.3s ease; }
+    .scholar:hover { transform: translateY(-5px); }
+    .avatar { width: 70px; height: 70px; border-radius: 16px; background: linear-gradient(135deg,var(--olive),var(--gold)); display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 16px; }
+
+    .quote { background: linear-gradient(180deg, rgba(201,162,63,0.1), rgba(85,107,47,0.05)); text-align: center; padding: 60px 20px; border-radius: 20px; color: var(--olive); font-size: 22px; font-weight: 700; }
+
+    footer { text-align: center; background: var(--olive); color: var(--bg-beige); padding: 20px; border-radius: 16px; font-size: 16px; margin-top: 40px; }
+
+    /* تنسيق قسم الباركود */
+    .qrcode-wrap { display:flex; flex-direction:column; align-items:center; gap:12px; }
+    #qrcode { padding: 12px; background: #fff; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+    .qrcode-url { font-size: 14px; color: var(--muted); word-break: break-all; max-width: 320px; text-align:center; }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+  <!-- البداية -->
+  <section class="hero card" data-aos="fade-up">
+    <div class="logo">اقرأ</div>
+    <div>
+      <h1>اقرأ وارتقِ بالعلم</h1>
+      <p>قال رسول الله ﷺ: «طلب العلم فريضة على كل مسلم» — <span style="color:#888">(رواه ابن ماجه)</span></p>
+      <p>العلم في الإسلام هو نور القلوب وسبيل الرفعة ومفتاح كل خير. تصفّح الموقع لتشاهد فيديو قصير، لعبة تفاعلية، وتتعرف على روّاد العلم الأوائل.</p>
+      <button class="btn btn-primary" onclick="document.getElementById('video').scrollIntoView({behavior:'smooth'})">ابدأ رحلتك</button>
+    </div>
+  </section>
+
+  <section class="card" data-aos="fade-up">
+    <h2>العلم في الإسلام</h2>
+    <p>حثّ الإسلام على طلب العلم والتفكر والتدبر، وجعل العلماء ورثة الأنبياء. فبالعلم تُبنى الأمم وتزدهر الحضارات.</p>
+  </section>
+
+  <section class="card" id="video" data-aos="fade-up">
+    <h2>شاهد فيديو قصير</h2>
+    <iframe src="https://www.youtube.com/embed/uwUlsHttAws" allowfullscreen></iframe>
+  </section>
+
+  <section class="card game" id="game" data-aos="fade-up">
+    <h2>اللعبة التعليمية</h2>
+    <p>اسحب الحروف لتكوين الكلمة الصحيحة ✨</p>
+    <div id="target" class="target" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+    <div id="tiles" class="tiles"></div>
+    <button class="btn btn-primary" id="startGame">ابدأ اللعبة</button>
+    <button class="btn btn-outline" id="checkWord">تحقق</button>
+    <p id="message" style="font-weight:700;margin-top:20px"></p>
+  </section>
+
+  <section class="card" data-aos="fade-up">
+    <h2>روّاد العلم</h2>
+    <div class="scholars">
+      <div class="scholar" data-aos="fade-up">
+        <div class="avatar">ابن سينا</div>
+        <div>
+          <h3>ابن سينا</h3>
+          <p>طبيب وفيلسوف بارز، أثرى الطب بكتابه "القانون" الذي ظل مرجعًا لقرون.</p>
+        </div>
+      </div>
+      <div class="scholar" data-aos="fade-up">
+        <div class="avatar">الخوارزمي</div>
+        <div>
+          <h3>الخوارزمي</h3>
+          <p>وضع أسس علم الجبر والخوارزميات التي تُعد قلب الحوسبة الحديثة.</p>
+        </div>
+      </div>
+      <div class="scholar" data-aos="fade-up">
+        <div class="avatar">فاطمة</div>
+        <div>
+          <h3>فاطمة الفهرية</h3>
+          <p>أسست جامعة القرويين في فاس، أقدم جامعة ما زالت قائمة في العالم.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم الباركود المعدل -->
+  <section class="card" data-aos="fade-up">
+    <h2>📱 شارك الموقع عبر الباركود</h2>
+    <div class="qrcode-wrap">
+      <div id="qrcode"></div>
+      <div class="qrcode-url" id="qrcode-url"></div>
+      <div>
+        <button class="btn btn-primary" id="downloadQR">حفظ صورة الباركود</button>
+      </div>
+    </div>
+    <p style="margin-top:12px;color:var(--muted);font-size:14px;text-align:center">
+      امسح الباركود بكاميرا الجوال لفتح الموقع مباشرة.
+    </p>
+  </section>
+
+  <section class="quote" data-aos="fade-up">
+    «من سلك طريقًا يلتمس فيه علمًا، سهّل الله له به طريقًا إلى الجنة.»
+  </section>
+
+  <footer>
+    🌿 تم تصميم هذا الموقع لنشر حبّ العلم ✨
+  </footer>
+
+</div>
+
+<!-- مكتبة AOS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({once:true, duration:1000});
+</script>
+
+<!-- مكتبة QRCode.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script>
+  // -------------------------
+  // كلمات اللعبة
+  // -------------------------
+  const words = ['اقرأ','العلم','مسجد'];
+  let currentWord = 0;
+  const tiles = document.getElementById('tiles');
+  const target = document.getElementById('target');
+  const message = document.getElementById('message');
+
+  document.getElementById('startGame').onclick = () => startGame();
+  document.getElementById('checkWord').onclick = () => checkWord();
+
+  function startGame() {
+    target.innerHTML = '';
+    tiles.innerHTML = '';
+    message.innerText = '';
+    const chars = Array.from(words[currentWord]);
+    const shuffled = chars.sort(() => Math.random() - 0.5);
+    shuffled.forEach(ch => {
+      const div = document.createElement('div');
+      div.className = 'tile';
+      div.textContent = ch;
+      div.addEventListener('click', () => selectTile(div));
+      tiles.appendChild(div);
+    });
+  }
+
+  function selectTile(tile) {
+    if (tile.parentElement.id === 'tiles') {
+      target.appendChild(tile);
+    } else if (tile.parentElement.id === 'target') {
+      tiles.appendChild(tile);
+    }
+  }
+
+  function checkWord() {
+    const result = Array.from(target.children).map(t => t.textContent).join('');
+    if (result === words[currentWord] || result.split('').reverse().join('') === words[currentWord]) {
+      message.style.color = 'green';
+      message.innerText = 'إجابة صحيحة! 🌟';
+    } else {
+      message.style.color = 'crimson';
+      message.innerText = 'جرّب مجددًا.';
+    }
+  }
+
+  // -------------------------
+  // QR Code الموقع
+  // -------------------------
+  const siteURL = "https://iqraa.com"; // رابط موقعك الفعلي
+  document.getElementById('qrcode-url').innerText = siteURL;
+
+  const qr = new QRCode(document.getElementById("qrcode"), {
+    text: siteURL,
+    width: 220,
+    height: 220,
+    colorDark: "#4b5f35",
+    colorLight: "#ffffff",
+    correctLevel: QRCode.CorrectLevel.H
+  });
+
+  document.getElementById('downloadQR').addEventListener('click', () => {
+    const qrWrap = document.getElementById('qrcode');
+    let img = qrWrap.querySelector('img');
+    let canvas = qrWrap.querySelector('canvas');
+
+    if (img) {
+      const link = document.createElement('a');
+      link.href = img.src;
+      link.download = 'iqraa-qrcode.png';
+      link.click();
+    } else if (canvas) {
+      const link = document.createElement('a');
+      link.href = canvas.toDataURL("image/png");
+      link.download = 'iqraa-qrcode.png';
+      link.click();
+    } else {
+      alert('لا يمكن حفظ الصورة تلقائيًا. انسخ الباركود أو التقط سكرين شوت.');
+    }
+  });
+
+  // تسجيل Service Worker (اختياري)
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js')
+      .then(() => console.log('Service Worker registered'))
+      .catch(err => console.error('SW registration failed:', err));
+  }
+</script>
+</body>
+</html>
